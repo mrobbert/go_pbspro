@@ -1,8 +1,8 @@
-# Golang library of PBSPro
+# Golang library of OpenPBS
 
 **This is not an official Paratera product**
 
-This is a thin Go wrapper around the C library (libpbs) for the [PBSPro resource manager]
+This is a thin Go wrapper around the C library (libpbs) for the [OpenPBS resource manager]
 
 ## 1.Requirements
 
@@ -17,14 +17,23 @@ You must install some requirements on CentOS 7.
 # yum install -y expat libedit postgresql-server python sendmail tcl tk libical
 ```
 
-## 1.2.Download && Build PBSpro
-
-Download PBSpro
+And on CentOS 8 Stream
 
 ```bash
-# git clone https://github.com/PBSPro/pbspro.git
+# yum groupinstall "Development Tools" -y
+# yum install -y sudo tar wget openssh-server openssh-clients openssl openssl-devel
+# yum install --enablerepo powertools -y gcc make rpm-build libtool hwloc-devel libX11-devel libXt-devel libedit-devel libical-devel ncurses-devel perl postgresql-devel python3-devel tcl-devel tk-devel swig expat-devel libXext libXft autoconf automake
+#
+```
+
+## 1.2.Download && Build OpenPBS
+
+Download OpenPBS
+
+```bash
+# git clone https://github.com/openpbs/openpbs
 # ./autogen.sh
-# ./configure --prefix=/opt/pbspro
+# ./configure --prefix=/opt/pbs
 # make -j4
 # make install
 ```
@@ -32,10 +41,10 @@ Download PBSpro
 ## 1.3.Environment
 
 ```bash
-# export LD_LIBRARY_PATH=/opt/pbspro/lib
-# export PBS_EXEC=/opt/pbspro
+# export LD_LIBRARY_PATH=/opt/pbs/lib
+# export PBS_EXEC=/opt/pbs
 # export PBS_SERVER=pm01
-# export PBS_HOME=/opt/pbspro
+# export PBS_HOME=/opt/pbs
 ```
 
 ## 1.4.PBSpro Cluster
@@ -46,7 +55,7 @@ A PBSpro Cluster to test.
 ## 2.Install
 
 ```bash
-# go get github.com/taylor840326/go_pbspro
+# go get github.com/gsangwell/go_pbspro
 ```
 
 ## 3. Usage
@@ -55,7 +64,7 @@ A PBSpro Cluster to test.
     package main
 
     import (
-        "github.com/taylor840326/go_pbspro"
+        "github.com/gsangwell/go_pbspro"
         "log"
     )
 
@@ -89,13 +98,3 @@ A PBSpro Cluster to test.
         // ...
     }
 ```
-
-### 4. Donate
-
------
-
-If you like the project and want to buy me a cola, you can through:
-
-| PayPal                                                                                                               | 微信                                                                 |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| [![](https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png)](https://www.paypal.me/taylor840326) | ![](https://github.com/taylor840326/blog/raw/master/imgs/weixin.png) |
