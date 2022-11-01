@@ -2,10 +2,10 @@ package qmgr
 
 /*
 #cgo CFLAGS: -g
-#cgo LDFLAGS: -L/opt/pbspro/lib -lpbs
+#cgo LDFLAGS: -L/opt/pbs/lib -lpbs
 #include <stdlib.h>
-#include "/opt/pbspro/include/pbs_error.h"
-#include "/opt/pbspro/include/pbs_ifl.h"
+#include "/opt/pbs/include/pbs_error.h"
+#include "/opt/pbs/include/pbs_ifl.h"
 */
 import "C"
 
