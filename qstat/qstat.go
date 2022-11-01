@@ -908,7 +908,7 @@ func (qs *Qstat) PbsJobsState() error {
 }
 
 //获取信息
-func get_pbs_batch_status(batch_status *_Ctype_struct_batch_status) (batch []utils.BatchStatus) {
+func get_pbs_batch_status(batch_status *C.struct_batch_status) (batch []utils.BatchStatus) {
 
 	for batch_status != nil {
 		temp := []utils.Attrib{}
