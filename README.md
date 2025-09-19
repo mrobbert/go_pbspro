@@ -55,7 +55,7 @@ A PBSpro Cluster to test.
 ## 2.Install
 
 ```bash
-# go get github.com/gsangwell/go_pbspro
+# go get github.com/mrobbert/go_pbspro
 ```
 
 ## 3. Usage
@@ -64,7 +64,7 @@ A PBSpro Cluster to test.
     package main
 
     import (
-        "github.com/gsangwell/go_pbspro"
+        "github.com/mrobbert/go_pbspro"
         "log"
     )
 

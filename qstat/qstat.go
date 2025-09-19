@@ -16,7 +16,7 @@ import (
 
 	"github.com/juju/errors"
 
-	"github.com/gsangwell/go_pbspro/utils"
+	"github.com/mrobbert/go_pbspro/utils"
 )
 
 type (
